@@ -80,7 +80,7 @@ export default function AboutPage() {
           {/* IMAGE */}
           <div className='relative rounded-2xl overflow-hidden border border-slate-200 shadow-[0_4px_18px_rgba(0,0,0,0.15)]'>
             <Image
-              src='/image-2.jpg'
+              src='/app/image-2.jpg'
               alt='Commercial Kitchen LPG'
               width={650}
               height={450}
