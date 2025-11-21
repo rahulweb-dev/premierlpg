@@ -7,7 +7,7 @@ export default function AboutPage() {
       {/* HERO BANNER */}
       <section className='relative h-[320px] md:h-[420px] text-white bg-slate-900'>
         <Image
-          src='/images/about-lpg.jpg'
+          src='/images/image-2.jpg'
           alt='Commercial LPG Supply'
           fill
           className='object-cover opacity-60'
@@ -80,7 +80,7 @@ export default function AboutPage() {
           {/* IMAGE */}
           <div className='relative rounded-2xl overflow-hidden border border-slate-200 shadow-[0_4px_18px_rgba(0,0,0,0.15)]'>
             <Image
-              src='/image-2.jpg'
+              src='/images/image-2.jpg'
               alt='Commercial Kitchen LPG'
               width={650}
               height={450}
