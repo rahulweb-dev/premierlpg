@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import './globals.css';
 import Providers from '@/components/Providers';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: 'Commercial LPG Agency Hyderabad | Commercial Gas Supply',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className='bg-slate-50 text-slate-800'>
         <Providers>
+          <Toaster position='top-right' />
           <Navbar />
           {children}
         </Providers>

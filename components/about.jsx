@@ -80,7 +80,7 @@ export default function AboutPage() {
           {/* IMAGE */}
           <div className='relative rounded-2xl overflow-hidden border border-slate-200 shadow-[0_4px_18px_rgba(0,0,0,0.15)]'>
             <Image
-              src='/app/image-2.jpg'
+              src='/image-2.jpg'
               alt='Commercial Kitchen LPG'
               width={650}
               height={450}
@@ -129,7 +129,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA
       <section className='text-center text-white bg-red-600 py-14'>
         <h2 className='mb-3 text-3xl font-bold md:text-4xl'>
           Looking for a Reliable LPG Supplier?
@@ -144,7 +144,7 @@ export default function AboutPage() {
         >
           📞 Call Now: +91 98765 43210
         </Link>
-      </section>
+      </section> */}
     </main>
   );
 }

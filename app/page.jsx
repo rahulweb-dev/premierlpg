@@ -192,64 +192,87 @@ export default function Page() {
       {/* PRODUCTS / CYLINDER OPTIONS */}
       <section className='section bg-slate-50'>
         <div className='max-w-6xl px-4 mx-auto md:px-6 lg:px-8'>
-          <div className='flex flex-col gap-3 mb-6 md:flex-row md:items-end md:justify-between'>
-            <div>
-              <h2 className='section-heading'>Commercial LPG options</h2>
-              <p className='section-subtitle'>
-                Choose the right cylinder size or bulk LPG solution based on
-                your kitchen or industrial load.
-              </p>
-            </div>
+          {/* HEADING */}
+          <div className='mb-10 text-center'>
+            <h2 className='section-heading'>Commercial LPG Options</h2>
+            <p className='max-w-2xl mx-auto section-subtitle'>
+              Choose the right cylinder capacity or bulk LPG line depending on
+              your cooking load, commercial size, and safety compliance.
+            </p>
           </div>
 
-          <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
+          {/* CARD GRID */}
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             {[
               {
                 title: '19 KG Commercial Cylinder',
+                icon: '🧯',
                 tag: 'Restaurants • Cafes • Small Hotels',
                 points: [
-                  'Ideal for regular commercial kitchens',
-                  'Easy to handle and store',
-                  'Flexible daily or weekly supply',
+                  'Suited for regular commercial kitchens',
+                  'Easy handling, compact storage',
+                  'Flexible daily / weekly supply',
                 ],
               },
               {
                 title: '35 KG Commercial Cylinder',
+                icon: '🔥',
                 tag: 'Large Kitchens • Canteens • Food Courts',
                 points: [
-                  'Recommended for high-consumption kitchens',
-                  'Reduces frequent cylinder changes',
-                  'Best for continuous operations',
+                  'Best for high-consumption kitchens',
+                  'Less frequent cylinder changes',
+                  'Continuous heavy-duty operations',
                 ],
               },
               {
                 title: 'Bulk LPG / Pipeline Solutions',
+                icon: '🏭',
                 tag: 'Hotels • Industries • Central Kitchens',
                 points: [
-                  'Bulk LPG storage & reticulated pipeline',
-                  'Customised installation & safety audit',
+                  'Bulk tank installation options',
+                  'Customised pipeline & safety audit',
                   'Ideal for large scale operations',
                 ],
               },
             ].map((card) => (
               <div
                 key={card.title}
-                className='flex flex-col justify-between p-4 bg-white border shadow-sm rounded-2xl border-slate-100'
+                className='flex flex-col justify-between p-6 transition duration-200 bg-white border shadow-sm rounded-2xl hover:shadow-xl hover:border-red-200'
               >
+                {/* TOP ICON */}
+                <div className='flex items-center justify-center w-12 h-12 mb-4 text-2xl text-red-600 rounded-xl bg-red-50'>
+                  {card.icon}
+                </div>
+
+                {/* TITLE + TAG */}
                 <div>
-                  <h3 className='text-sm font-semibold md:text-base text-slate-900'>
+                  <h3 className='text-lg font-semibold text-slate-900'>
                     {card.title}
                   </h3>
-                  <p className='text-[11px] text-red-600 mt-1'>{card.tag}</p>
-                  <ul className='mt-3 space-y-1.5 text-xs text-slate-700'>
+                  <p className='mt-1 text-xs font-medium text-red-600'>
+                    {card.tag}
+                  </p>
+
+                  {/* BULLET POINTS */}
+                  <ul className='mt-4 space-y-2 text-sm text-slate-700'>
                     {card.points.map((p) => (
-                      <li key={p}>• {p}</li>
+                      <li key={p} className='flex items-start gap-2'>
+                        <span className='text-base leading-none text-red-500'>
+                          •
+                        </span>
+                        <span>{p}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
-                <div className='mt-4'>
-                  <a href='#cta' className='w-full text-center btn-primary'>
-                    Request best commercial rates
+
+                {/* BUTTON */}
+                <div className='mt-6'>
+                  <a
+                    href='#cta'
+                    className='block w-full text-center bg-red-600 hover:bg-red-700 text-white font-semibold text-sm py-2.5 rounded-lg transition'
+                  >
+                    Request Best Commercial Rates
                   </a>
                 </div>
               </div>
@@ -257,88 +280,104 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       {/* SAFETY & COMPLIANCE */}
-      <section className='bg-white section'>
-        <div className='grid items-center max-w-6xl grid-cols-1 gap-8 px-4 mx-auto md:px-6 lg:px-8 md:grid-cols-2'>
+      <section className='bg-white border-t border-b section border-slate-200'>
+        <div className='grid items-start max-w-6xl grid-cols-1 gap-10 px-4 mx-auto md:grid-cols-2 md:px-6 lg:px-8'>
+          {/* LEFT SIDE TEXT */}
           <div>
-            <h2 className='section-heading'>Safety & compliance first</h2>
-            <p className='section-subtitle'>
-              We strictly follow safety guidelines for commercial LPG storage,
-              handling and installation to protect your staff, customers and
-              property.
+            <h2 className='section-heading text-slate-900'>
+              Safety & Compliance First
+            </h2>
+            <p className='section-subtitle text-slate-600'>
+              Safety is not optional—it's our principle. Every cylinder,
+              installation and delivery meets strict commercial LPG protocols to
+              protect your business and people.
             </p>
 
-            <ul className='mt-5 space-y-2 text-xs md:text-sm text-slate-700'>
-              <li>• Regular leak checks during cylinder delivery</li>
-              <li>• Proper regulator and hose inspection</li>
-              <li>
-                • Guidance on LPG storage room, ventilation & emergency exits
-              </li>
-              <li>• Staff awareness on emergency handling</li>
-              <li>• Documentation support for inspections and audits</li>
+            <ul className='mt-6 space-y-2 text-sm md:text-base text-slate-700'>
+              {[
+                'Regular leak checks during delivery',
+                'Certified regulators, valves & hose inspection',
+                'Guidance on ventilation and LPG storage layout',
+                'Staff training for emergency handling',
+                'Documentation support for audits & inspections',
+              ].map((item) => (
+                <li key={item} className='flex items-start gap-2'>
+                  <span className='h-2 w-2 mt-[6px] rounded-full bg-red-600'></span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className='p-4 border bg-slate-50 rounded-2xl border-slate-100 md:p-6'>
-            <h3 className='mb-3 text-sm font-semibold text-slate-900'>
-              Safety checklist for your commercial kitchen
+          {/* CHECKLIST CARD */}
+          <div className='p-6 bg-white border shadow-sm border-slate-200 rounded-xl'>
+            <h3 className='pb-1 pl-3 text-base font-semibold border-l-4 border-red-600 md:text-lg text-slate-900'>
+              Kitchen Safety Checklist
             </h3>
-            <div className='grid grid-cols-1 gap-3 text-xs sm:grid-cols-2 text-slate-700'>
-              <div className='p-3 bg-white border rounded-xl border-slate-100'>
-                ✅ Cylinders stored upright & secured
-              </div>
-              <div className='p-3 bg-white border rounded-xl border-slate-100'>
-                ✅ No open flames near cylinder storage
-              </div>
-              <div className='p-3 bg-white border rounded-xl border-slate-100'>
-                ✅ Exhaust and ventilation maintained
-              </div>
-              <div className='p-3 bg-white border rounded-xl border-slate-100'>
-                ✅ Fire extinguishers available & checked
-              </div>
+
+            <div className='grid grid-cols-1 gap-3 mt-4 text-sm sm:grid-cols-2 text-slate-700'>
+              {[
+                'Cylinders stored upright & secured',
+                'No flames near cylinder storage',
+                'Adequate ventilation installed',
+                'Fire extinguishers accessible',
+              ].map((check) => (
+                <div
+                  key={check}
+                  className='p-3 transition border rounded-lg bg-slate-50 border-slate-200 hover:border-red-500'
+                >
+                  {check}
+                </div>
+              ))}
             </div>
-            <p className='text-[11px] text-slate-500 mt-3'>
-              We can help you with a basic LPG safety check for your premises
-              during initial onboarding.
+
+            <p className='text-[12px] text-slate-500 mt-4 border-t pt-2'>
+              *A complimentary safety check is offered during onboarding.
             </p>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className='section bg-slate-50'>
+      <section className='bg-white border-t border-b section border-slate-200'>
         <div className='max-w-6xl px-4 mx-auto md:px-6 lg:px-8'>
-          <h2 className='section-heading'>What our clients say</h2>
-          <p className='section-subtitle'>
-            A quick look at how we help Hyderabad-based businesses run their
-            kitchens smoothly.
-          </p>
+          {/* Heading */}
+          <div className='max-w-2xl mx-auto mb-10 text-center'>
+            <h2 className='section-heading'>What Our Clients Say</h2>
+            <p className='section-subtitle text-slate-600'>
+              We proudly serve restaurants, hotels, bakeries & industries across
+              Hyderabad, ensuring safe and uninterrupted LPG supply.
+            </p>
+          </div>
 
-          <div className='grid grid-cols-1 gap-4 mt-6 md:grid-cols-3'>
+          {/* Testimonials */}
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             {[
               {
                 name: 'Rajesh Kumar',
                 role: 'Owner, Family Restaurant',
-                text: 'They have been consistently on time with deliveries. We have never faced a gas shortage during peak hours.',
+                text: 'On-time deliveries, even during peak hours. Never faced any shortage. Very reliable and professional.',
               },
               {
                 name: 'Sneha Reddy',
                 role: 'Cloud Kitchen Operator',
-                text: 'Pricing is transparent and support is responsive. They helped us plan our LPG usage better.',
+                text: 'Transparent pricing and helpful support team. They helped streamline our LPG usage and save cost.',
               },
               {
                 name: 'Ahmed Ali',
                 role: 'Hotel Manager, Hyderabad',
-                text: 'Professional team with good understanding of safety norms. Pipeline setup and support were smooth.',
+                text: 'Knowledgeable team with strong focus on safety norms. Pipeline installation was hassle-free.',
               },
             ].map((t) => (
               <div
                 key={t.name}
-                className='flex flex-col justify-between p-4 bg-white border shadow-sm rounded-2xl border-slate-100'
+                className='p-5 transition border shadow-sm bg-slate-50 border-slate-200 rounded-xl hover:shadow-md'
               >
-                <p className='mb-3 text-xs text-slate-700'>“{t.text}”</p>
-                <div>
+                <p className='pl-3 text-sm leading-relaxed border-l-4 border-red-600 text-slate-700'>
+                  “{t.text}”
+                </p>
+                <div className='mt-4'>
                   <p className='text-sm font-semibold text-slate-900'>
                     {t.name}
                   </p>
@@ -351,77 +390,128 @@ export default function Page() {
       </section>
 
       {/* CTA SECTION */}
-      <section id='cta' className='text-white bg-red-600 section'>
-        <div className='max-w-6xl mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-center'>
+      <section
+        id='cta'
+        className='text-white section bg-gradient-to-r from-red-700 via-red-600 to-red-700'
+      >
+        <div className='max-w-6xl mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 items-center'>
+          {/* LEFT CONTENT */}
           <div>
-            <h2 className='text-2xl font-bold md:text-3xl'>
-              Ready to start or switch your commercial LPG supplier?
-            </h2>
-            <p className='mt-3 text-sm md:text-base text-red-50'>
+            <div className='pl-3 border-l-4 border-yellow-300'>
+              <h2 className='text-3xl font-extrabold leading-tight md:text-4xl'>
+                Start or Switch Your Commercial LPG Supplier
+              </h2>
+            </div>
+
+            <p className='max-w-xl mt-3 text-sm text-red-100 md:text-base'>
               Share your requirements for commercial LPG supply in Hyderabad.
-              We’ll analyse your usage and suggest the most cost-effective,
-              reliable plan for your business.
+              Our team will suggest the most cost-effective and reliable plan
+              based on your monthly usage.
             </p>
 
-            <div className='flex flex-wrap gap-3 mt-5'>
+            {/* TRUST ICONS */}
+            <div className='flex flex-wrap gap-4 mt-5 text-xs md:text-sm'>
+              <span className='bg-white/10 border border-white/20 px-3 py-1.5 rounded-full'>
+                🕑 Priority Delivery
+              </span>
+              <span className='bg-white/10 border border-white/20 px-3 py-1.5 rounded-full'>
+                🛡 Certified Safety Support
+              </span>
+              <span className='bg-white/10 border border-white/20 px-3 py-1.5 rounded-full'>
+                📃 Compliance Assistance
+              </span>
+            </div>
+
+            {/* ACTION BUTTONS */}
+            <div className='flex flex-wrap gap-3 mt-6'>
               <a
                 href='tel:+919876543210'
-                className='bg-yellow-400 btn-primary text-slate-900 hover:bg-yellow-500'
+                className='px-6 py-2.5 bg-yellow-400 text-slate-900 font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition'
               >
-                📞 Call: +91-9876543210
+                Call Now: +91-98765-43210
               </a>
               <a
                 href='https://wa.me/919876543210?text=I%20need%20commercial%20LPG%20for%20my%20business'
                 target='_blank'
-                className='text-red-600 bg-white btn-primary hover:bg-red-50'
+                className='px-6 py-2.5 font-semibold bg-white text-red-700 rounded-lg shadow-md hover:bg-red-50 transition'
               >
-                💬 WhatsApp Enquiry
+                WhatsApp Inquiry
               </a>
             </div>
           </div>
 
-          <div className='p-4 bg-white shadow-lg text-slate-900 rounded-2xl md:p-5'>
-            <h3 className='mb-2 text-sm font-semibold md:text-base'>
-              Quick enquiry form
+          {/* FORM CARD */}
+          <div className='p-6 shadow-sm transitionborder rounded-2xl border-slate-200 hover:shadow-md md:p-7'>
+            <h3 className='text-lg font-semibold text-white md:text-xl'>
+              Quick Enquiry Form
             </h3>
-            <p className='mb-3 text-xs text-slate-600'>
-              Our team will reach out within a short time during working hours.
+            <p className='mt-1 mb-4 text-xs md:text-sm text-slate-900'>
+              Our commercial LPG expert will contact you shortly.
             </p>
-            <LeadForm />
+
+            <div className='pt-1'>
+              <LeadForm />
+            </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className='py-8 bg-slate-900 text-slate-300'>
-        <div className='grid max-w-6xl grid-cols-1 gap-6 px-4 mx-auto text-xs md:px-6 lg:px-8 md:grid-cols-3 md:text-sm'>
+      <footer className='pt-10 pb-6 bg-slate-900 text-slate-300'>
+        <div className='grid max-w-6xl grid-cols-1 gap-8 px-4 mx-auto text-sm md:px-6 lg:px-8 md:grid-cols-3'>
+          {/* About */}
           <div>
-            <h3 className='mb-2 text-sm font-semibold text-white md:text-base'>
+            <h3 className='mb-2 text-base font-semibold text-white'>
               Commercial LPG Agency – Hyderabad
             </h3>
-            <p>
+            <p className='leading-relaxed text-slate-400'>
               Reliable commercial LPG supply for restaurants, hotels, cloud
-              kitchens, canteens and industries across Hyderabad.
+              kitchens, canteens and industrial kitchens across Hyderabad.
             </p>
           </div>
+
+          {/* Contact */}
           <div>
             <h4 className='mb-2 font-semibold text-white'>Contact</h4>
-            <p>Phone: +91-9876543210</p>
-            <p>City: Hyderabad</p>
-            <p>Working hours: 9:00 AM – 8:00 PM</p>
+            <p>
+              <span className='text-slate-400'>Phone:</span> +91-9876543210
+            </p>
+            <p>
+              <span className='text-slate-400'>City:</span> Hyderabad
+            </p>
+            <p>
+              <span className='text-slate-400'>Hours:</span> 9:00 AM – 8:00 PM
+            </p>
           </div>
+
+          {/* Areas */}
           <div>
             <h4 className='mb-2 font-semibold text-white'>Service Areas</h4>
-            <p>
-              Major commercial zones in Hyderabad including Banjara Hills,
-              Jubilee Hills, Gachibowli, HITEC City, Kukatpally, Secunderabad
-              and surrounding areas.
+            <p className='leading-relaxed text-slate-400'>
+              Banjara Hills, Jubilee Hills, Gachibowli, HITEC City, Kukatpally,
+              Secunderabad, Madhapur, Somajiguda, Begumpet & nearby commercial
+              zones.
             </p>
           </div>
         </div>
-        <div className='mt-6 text-[10px] text-center text-slate-500'>
-          © {new Date().getFullYear()} Commercial LPG Agency, Hyderabad. All
-          rights reserved.
+
+        {/* Bottom Bar */}
+        <div className='pt-4 mt-8 text-xs text-center border-t border-slate-800 text-slate-500'>
+          <p>
+            © {new Date().getFullYear()} Commercial LPG Agency, Hyderabad. All
+            rights reserved.
+          </p>
+
+          <p className='mt-1'>
+            Designed & Developed by{' '}
+            <a
+              href='https://www.broaddcast.com'
+              target='_blank'
+              className='font-medium text-yellow-400 transition hover:text-yellow-300'
+            >
+              Broaddcast Business Solutions
+            </a>
+          </p>
         </div>
       </footer>
 
