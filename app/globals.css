@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-50 text-slate-800;
+}
+
+/* Re-usable utility classes */
+.section {
+  @apply py-12 md:py-16;
+}
+
+.section-heading {
+  @apply text-2xl md:text-3xl font-bold text-slate-900 mb-3;
+}
+
+.section-subtitle {
+  @apply text-sm md:text-base text-slate-600 max-w-2xl;
+}
+
+.input {
+  @apply w-full border border-slate-200 rounded-lg px-3 py-2 text-sm
+  focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm md:text-base
+  font-semibold bg-red-600 text-white hover:bg-red-700 transition;
+}
+
+.badge-pill {
+  @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-red-50 text-red-700;
+}
+
+/* Floating contact buttons */
+.floating-buttons {
+  @apply fixed bottom-4 right-4 flex flex-col gap-3 z-40;
+}
+
+.floating-btn {
+  @apply flex items-center gap-2 px-3 py-2 rounded-full shadow-lg text-sm font-semibold;
+}
+
+.floating-btn-call {
+  @apply bg-yellow-400 hover:bg-yellow-500 text-slate-900;
+}
+
+.floating-btn-wa {
+  @apply bg-green-500 hover:bg-green-600 text-white;
+}
